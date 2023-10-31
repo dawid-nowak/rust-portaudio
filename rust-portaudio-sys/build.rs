@@ -83,8 +83,8 @@ mod unix_platform {
 
     use super::{err_to_panic, run};
 
-    pub const PORTAUDIO_URL: &'static str = "http://www.portaudio.com/archives/pa_stable_v19_20140130.tgz";
-    pub const PORTAUDIO_TAR: &'static str = "pa_stable_v19_20140130.tgz";
+    pub const PORTAUDIO_URL: &'static str = "https://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz"; //"http://www.portaudio.com/archives/pa_stable_v19_20140130.tgz";
+    pub const PORTAUDIO_TAR: &'static str = "pa_stable_v190600_20161030.tgz" ; //"pa_stable_v19_20140130.tgz";
     pub const PORTAUDIO_FOLDER: &'static str = "portaudio";
 
     pub fn download() {
@@ -114,8 +114,8 @@ mod unix_platform {
         err_to_panic(env::set_current_dir(".."));
 
         // cleaning portaudio sources
-        run(Command::new("rm").arg("-rf")
-            .args(&[PORTAUDIO_TAR, PORTAUDIO_FOLDER]));
+//        run(Command::new("rm").arg("-rf")
+//            .args(&[PORTAUDIO_TAR, PORTAUDIO_FOLDER]));
     }
 
     pub fn print_libs(out_dir: &Path) {
